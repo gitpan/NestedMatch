@@ -1,0 +1,69 @@
+README for NestedMatch version 1.03
+
+NestedMatch finds delimited substrings with proper nesting.  For example,
+
+  ($lispexpr, $rest) = nested_match ("(defun () (let ...)) (defun ...)",
+                                     "(", ")");
+
+returns ('(defun () (let ...))', ' (defun ...)');
+
+For more detail, see the POD documentation in NestedMatch.pm
+
+PREREQUISITES
+
+NestedMatch is a simple module with just two functions.  
+It has no requirements beyond Perl 5.000.
+
+INSTALLATION
+
+This module is written entirely in Perl.  There's nothing to build,
+and installation should be as simple as
+ 
+  perl Makefile.PL
+  make
+  make test
+  make install
+
+To install this module by hand, as is required for Win32 Perl 5.003,
+simply copy NestedMatch.pm to the \perl\lib\Text directory.  Test
+by running perl test.pl.
+
+CHANGES
+
+1997/10/21: Released version 1.03
+            No substantive changes, just a few tweaks in the documentation.
+            And I'm finally going to get this thing up to PAUSE.
+
+1997/06/27: Released version 1.02
+            Aurg^2!  1.01 had bad line breaks (^M characters confuse
+            MakeMaker, I guess).
+
+1997/06/27: Released version 1.01
+            Aurg!  nested_match didn't do the right thing if $start eq $end
+            and the search string didn't begin with $start.  Now it does.
+
+1997/06/27: Released version 1.00
+
+TODO
+
+I haven't been tempted to change it in weeks, so I think it's complete
+and stable as is, but feel free to disagree ;-)
+
+CONTACTING THE AUTHOR
+
+The best way to reach me is by email to <norm@berkshire.net>
+You will find additional contact information at the Small
+Planet Software home page: http://www.smallplanetsoftware.com/
+
+COPYRIGHT
+
+Copyright (c) 1996, 1997 Small Planet Software and Norman Walsh.
+All rights reserved.  This program is free software; you can 
+redistribute it and/or modify it under the same terms as Perl itself.
+
+WARRANTY
+
+THIS PACKAGE IS PROVIDED "AS IS" AND WITHOUT ANY EXPRESS OR
+IMPLIED WARRANTIES, INCLUDING, WITHOUT LIMITATION, THE IMPLIED
+WARRANTIES OF MERCHANTIBILITY AND FITNESS FOR A PARTICULAR
+PURPOSE.
